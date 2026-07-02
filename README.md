@@ -1,0 +1,2 @@
+# proiect-practica
+proiect practica
