@@ -91,34 +91,13 @@ disponibil;
 rezervat;
 închiriat;
 vândut.
+
 Funcționalități administrative
 dashboard cu statistici;
 aprobarea anunțurilor;
 ștergerea anunțurilor neconforme;
 blocarea utilizatorilor.
-Utilaje disponibile în aplicație
-Utilaje agricole
-Tractor
-Combină agricolă
-Semănătoare
-Plug
-Grapă cu discuri
-Cultivator
-Presă de balotat
-Mașină de erbicidat
-Remorcă agricolă
-Încărcător frontal agricol
-Utilaje pentru construcții
-Excavator
-Buldoexcavator
-Buldozer
-Macara
-Încărcător frontal
-Cilindru compactor
-Finisor asfalt
-Autobetonieră
-Miniexcavator
-Stivuitor
+
 Designul aplicației
 
 Interfața utilizează un design modern și responsive, adaptat atât pentru desktop, cât și pentru dispozitive mobile.
