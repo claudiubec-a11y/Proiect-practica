@@ -1,0 +1,30 @@
+/* ==========================================================================
+   UtilajePro — favorites.css
+   Stiluri specifice paginii favorite.html: grid de utilaje salvate
+   (reutilizează .listing-card din global.css) și starea goală.
+   ========================================================================== */
+
+.favorites-section .listings-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Pe pagina de favorite, butonul de inimă este mereu activ (roșu) pentru
+   că toate cardurile afișate sunt deja la favorite */
+.favorites-section .btn-favorite {
+    color: var(--color-danger);
+}
+
+.favorites-section .btn-favorite:hover {
+    transform: scale(1.15);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .favorites-section .listings-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .favorites-section .listings-grid { grid-template-columns: 1fr; }
+}

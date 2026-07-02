@@ -1,0 +1,714 @@
+/* ==========================================================================
+   UtilajePro — global.css
+   Reset, variabile CSS, tipografie, culori, butoane și componente comune
+   (carduri de anunț, badge-uri, formulare de bază, layout utilitar).
+   Acest fișier este încărcat pe TOATE paginile, înaintea CSS-ului specific.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variabile CSS (design tokens)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Culori de fundal */
+    --color-bg: #FFFFFF;
+    --color-bg-soft: #F8FAFC;
+    --color-bg-muted: #F1F5F9;
+
+    /* Culoare principală (brand) */
+    --color-primary: #2563EB;
+    --color-primary-hover: #1D4ED8;
+    --color-primary-light: #DBEAFE;
+
+    /* Culoare secundară — categorie agricolă */
+    --color-agricole: #16A34A;
+    --color-agricole-light: #DCFCE7;
+
+    /* Culoare accent — categorie construcții */
+    --color-constructii: #F59E0B;
+    --color-constructii-light: #FEF3C7;
+
+    /* Text */
+    --color-text: #1E293B;
+    --color-text-muted: #64748B;
+    --color-text-inverse: #FFFFFF;
+
+    /* Stare / feedback */
+    --color-success: #10B981;
+    --color-success-light: #D1FAE5;
+    --color-warning: #FACC15;
+    --color-warning-light: #FEF9C3;
+    --color-danger: #EF4444;
+    --color-danger-light: #FEE2E2;
+    --color-info: #3B82F6;
+
+    /* Borduri */
+    --color-border: #E2E8F0;
+    --color-border-strong: #CBD5E1;
+
+    /* Tipografie */
+    --font-display: "Poppins", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-md: 1.125rem;
+    --fs-lg: 1.375rem;
+    --fs-xl: 1.75rem;
+    --fs-2xl: 2.25rem;
+    --fs-3xl: 3rem;
+
+    /* Spațiere */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 4rem;
+
+    /* Raze de rotunjire */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-full: 999px;
+
+    /* Umbre */
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+    --shadow-focus: 0 0 0 4px rgba(37, 99, 235, 0.15);
+
+    /* Tranziții */
+    --transition-fast: 150ms ease;
+    --transition-base: 220ms ease;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 76px;
+}
+
+/* Pregătire pentru dark mode (neactivat implicit) — se activează prin
+   [data-theme="dark"] pe <html>, adăugat ulterior de JavaScript. */
+[data-theme="dark"] {
+    --color-bg: #0F172A;
+    --color-bg-soft: #111827;
+    --color-bg-muted: #1E293B;
+    --color-text: #F1F5F9;
+    --color-text-muted: #94A3B8;
+    --color-border: #334155;
+    --color-border-strong: #475569;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset CSS
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg-soft);
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. Tipografie generală
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.25;
+}
+
+h1 { font-size: var(--fs-2xl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-md); }
+
+p { color: var(--color-text); }
+
+/* --------------------------------------------------------------------------
+   4. Layout utilitar (comun pe toate paginile)
+   -------------------------------------------------------------------------- */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--space-lg);
+}
+
+.section {
+    padding-block: var(--space-2xl);
+}
+
+.section-title {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.section-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.page-title {
+    font-size: var(--fs-2xl);
+    margin-block: var(--space-md);
+}
+
+.page-subtitle {
+    color: var(--color-text-muted);
+    max-width: 640px;
+    margin-bottom: var(--space-xl);
+}
+
+.link-inline {
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.link-inline:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+.link-see-all {
+    color: var(--color-primary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    padding: var(--space-sm) var(--space-md);
+    z-index: 1000;
+    border-radius: 0 0 var(--radius-sm) 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Fir de navigare (breadcrumb) — folosit pe majoritatea paginilor interne */
+.breadcrumb {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-lg);
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.breadcrumb a {
+    color: var(--color-text-muted);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
+.breadcrumb span[aria-current] {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   5. Butoane (comune tuturor paginilor)
+   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background-color var(--transition-fast), color var(--transition-fast),
+        border-color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--color-bg-muted);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-border);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border-strong);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-danger {
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
+}
+
+.btn-danger:hover {
+    background-color: #DC2626;
+}
+
+.btn-success {
+    background-color: var(--color-success);
+    color: var(--color-text-inverse);
+}
+
+.btn-success:hover {
+    background-color: #059669;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: var(--fs-base);
+}
+
+.btn-sm {
+    padding: 0.4rem 0.9rem;
+    font-size: var(--fs-xs);
+}
+
+/* --------------------------------------------------------------------------
+   6. Formulare — stiluri de bază reutilizate pe toate paginile cu formular
+   -------------------------------------------------------------------------- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+.form-row-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.form-row-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.form-group label {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    font-size: var(--fs-base);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-focus);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+}
+
+.form-error {
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+    font-size: var(--fs-sm);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* Stare de eroare pe un câmp individual (adăugată prin JS: is-invalid) */
+.form-group.is-invalid input,
+.form-group.is-invalid select,
+.form-group.is-invalid textarea {
+    border-color: var(--color-danger);
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   7. Badge-uri (folosite pe carduri de anunț, dashboard admin etc.)
+   -------------------------------------------------------------------------- */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.75rem;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.badge-tip.badge-vanzare {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-hover);
+}
+
+.badge-tip.badge-inchiriere {
+    background-color: var(--color-constructii-light);
+    color: #B45309;
+}
+
+.badge-status-disponibil { background-color: var(--color-success-light); color: #047857; }
+.badge-status-inchiriat  { background-color: var(--color-warning-light); color: #92650B; }
+.badge-status-vandut     { background-color: var(--color-bg-muted); color: var(--color-text-muted); }
+.badge-status-rezervat   { background-color: var(--color-primary-light); color: var(--color-primary-hover); }
+
+.badge-admin-status.badge-in-asteptare { background-color: var(--color-warning-light); color: #92650B; }
+.badge-admin-status.badge-aprobat      { background-color: var(--color-success-light); color: #047857; }
+.badge-admin-status.badge-respins      { background-color: var(--color-danger-light); color: #B91C1C; }
+
+/* --------------------------------------------------------------------------
+   8. Card de anunț — componentă reutilizată pe: home, listings, favorites,
+      profile, machine-details (utilaje similare)
+   -------------------------------------------------------------------------- */
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--space-lg);
+}
+
+.listing-card {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.listing-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--shadow-lg);
+}
+
+.listing-card-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--color-bg-muted);
+}
+
+.listing-card-media .listing-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.listing-card:hover .listing-img {
+    transform: scale(1.06);
+}
+
+.listing-card-media .badge {
+    position: absolute;
+    left: var(--space-sm);
+}
+
+.badge-tip { top: var(--space-sm); }
+.badge-status { top: calc(var(--space-sm) + 2rem); }
+
+.btn-favorite {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: var(--radius-full);
+    font-size: var(--fs-md);
+    color: var(--color-text-muted);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-favorite:hover {
+    transform: scale(1.1);
+    color: var(--color-danger);
+}
+
+.btn-favorite.is-active {
+    color: var(--color-danger);
+}
+
+.listing-card-body {
+    padding: var(--space-md);
+}
+
+.listing-title {
+    font-size: var(--fs-base);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+.listing-title a:hover {
+    color: var(--color-primary);
+}
+
+.listing-price {
+    font-family: var(--font-display);
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.listing-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+}
+
+.listing-meta li:not(:last-child)::after {
+    content: "•";
+    margin-left: var(--space-sm);
+    color: var(--color-border-strong);
+}
+
+/* --------------------------------------------------------------------------
+   9. Stare goală (empty state) — reutilizată în favorites, mesaje etc.
+   -------------------------------------------------------------------------- */
+.empty-state {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-md);
+    color: var(--color-text-muted);
+}
+
+.empty-state img {
+    margin-inline: auto;
+    margin-bottom: var(--space-lg);
+}
+
+.empty-state h2 {
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+}
+
+.empty-state p {
+    margin-bottom: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   10. Statistici tip card — reutilizate în admin-dashboard și about
+   -------------------------------------------------------------------------- */
+.stat-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.stat-label {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. Call to action — folosit în home și about
+   -------------------------------------------------------------------------- */
+.cta-section {
+    background: linear-gradient(135deg, var(--color-primary), #1E40AF);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-inverse);
+}
+
+.cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    padding-block: var(--space-xl);
+}
+
+.cta-container h2 { color: var(--color-text-inverse); }
+.cta-container p { color: rgba(255, 255, 255, 0.85); }
+
+.cta-container .btn-primary {
+    background-color: var(--color-text-inverse);
+    color: var(--color-primary);
+}
+
+.cta-container .btn-primary:hover {
+    background-color: var(--color-bg-muted);
+}
+
+/* --------------------------------------------------------------------------
+   12. Media Queries generale (breakpoint-uri de referință pentru tot proiectul)
+   1200px / 992px / 768px / 576px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    :root { --container-width: 100%; }
+}
+
+@media (max-width: 992px) {
+    h1 { font-size: var(--fs-xl); }
+    .listings-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .form-row-2col,
+    .form-row-3col { grid-template-columns: 1fr; }
+    .section { padding-block: var(--space-xl); }
+    .cta-container { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 576px) {
+    .container { padding-inline: var(--space-md); }
+    .listings-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+    .btn-lg { padding: 0.85rem 1.5rem; }
+}

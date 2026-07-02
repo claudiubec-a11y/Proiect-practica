@@ -1,0 +1,162 @@
+/* ==========================================================================
+   UtilajePro — admin-dashboard.css
+   Stiluri specifice paginii admin-dashboard.html: sidebar de administrare,
+   carduri de statistici, tabele pentru anunțuri și utilizatori, acțiuni.
+   ========================================================================== */
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   1. Sidebar de administrare
+   -------------------------------------------------------------------------- */
+.admin-sidebar {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-md));
+}
+
+.admin-sidebar-title {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.admin-nav-link {
+    display: block;
+    padding: 0.65rem var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.admin-nav-link:hover {
+    background-color: var(--color-bg-soft);
+    color: var(--color-text);
+}
+
+.admin-nav-link.is-active {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-hover);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   2. Grid de statistici
+   -------------------------------------------------------------------------- */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-block: var(--space-lg) var(--space-2xl);
+}
+
+.stat-card--warning {
+    border-left: 4px solid var(--color-warning);
+}
+
+.stat-card--warning .stat-value {
+    color: #92650B;
+}
+
+/* --------------------------------------------------------------------------
+   3. Panouri de administrare (anunțuri / utilizatori)
+   -------------------------------------------------------------------------- */
+.admin-panel {
+    margin-bottom: var(--space-2xl);
+}
+
+.admin-table-filters select,
+.admin-search-input {
+    padding: 0.6rem 0.9rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+}
+
+.admin-search-input {
+    min-width: 220px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Tabele de administrare
+   -------------------------------------------------------------------------- */
+.admin-table {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: var(--space-md);
+    font-size: var(--fs-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.admin-table th {
+    background-color: var(--color-bg-soft);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: var(--fs-xs);
+}
+
+.admin-table tbody tr {
+    transition: background-color var(--transition-fast);
+}
+
+.admin-table tbody tr:hover {
+    background-color: var(--color-bg-soft);
+}
+
+.admin-table a:hover {
+    color: var(--color-primary);
+}
+
+.admin-actions {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   5. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .admin-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .admin-layout { grid-template-columns: 1fr; }
+    .admin-sidebar {
+        position: static;
+        display: flex;
+        gap: var(--space-sm);
+        overflow-x: auto;
+    }
+    .admin-sidebar-title { display: none; }
+    .admin-sidebar nav ul { display: flex; gap: var(--space-sm); }
+}
+
+@media (max-width: 768px) {
+    .admin-table { display: block; overflow-x: auto; }
+    .section-header-row { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 576px) {
+    .admin-stats-grid { grid-template-columns: 1fr; }
+    .admin-actions { flex-direction: column; }
+}

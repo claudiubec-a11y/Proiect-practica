@@ -1,0 +1,61 @@
+/* ==========================================================================
+   UtilajePro — contact.css
+   Stiluri specifice paginii contact.html: formular de contact, informații
+   companie, hartă și date de contact.
+   ========================================================================== */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-2xl);
+    margin-top: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   1. Formular de contact
+   -------------------------------------------------------------------------- */
+.contact-form {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   2. Informații de contact
+   -------------------------------------------------------------------------- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.contact-info-item h2 {
+    font-size: var(--fs-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.contact-info-item p {
+    font-size: var(--fs-md);
+    font-weight: 500;
+}
+
+.contact-map-placeholder {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   3. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .contact-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+    .contact-form { padding: var(--space-lg); }
+}

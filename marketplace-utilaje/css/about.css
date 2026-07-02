@@ -1,0 +1,98 @@
+/* ==========================================================================
+   UtilajePro — about.css
+   Stiluri specifice paginii despre-noi.html: prezentare companie, misiune,
+   statistici, secțiunea echipei.
+   ========================================================================== */
+
+.about-hero-section {
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-hero-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: var(--space-2xl);
+}
+
+.about-hero-container img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   1. Blocuri de text (misiune, cine suntem)
+   -------------------------------------------------------------------------- */
+.about-block {
+    margin-bottom: var(--space-2xl);
+}
+
+.about-block h2 {
+    margin-bottom: var(--space-sm);
+}
+
+.about-block p {
+    color: var(--color-text-muted);
+    max-width: 760px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Statistici
+   -------------------------------------------------------------------------- */
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+}
+
+/* --------------------------------------------------------------------------
+   3. Echipă
+   -------------------------------------------------------------------------- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 140px;
+    height: 140px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    margin-inline: auto;
+    margin-bottom: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.team-member-name {
+    font-weight: 600;
+}
+
+.team-member-role {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .about-hero-container { grid-template-columns: 1fr; }
+    .about-hero-container img { order: -1; }
+    .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+    .about-stats-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+}

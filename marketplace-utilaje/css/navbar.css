@@ -1,0 +1,361 @@
+/* ==========================================================================
+   UtilajePro — navbar.css
+   Header/navbar responsive: logo, căutare, navigare principală, meniu
+   utilizator (dropdown), meniu mobil. Comun pe toate paginile.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Header container
+   -------------------------------------------------------------------------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    height: var(--header-height);
+}
+
+/* --------------------------------------------------------------------------
+   2. Logo
+   -------------------------------------------------------------------------- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    color: var(--color-text);
+    flex-shrink: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.logo:hover {
+    opacity: 0.85;
+}
+
+.logo-icon {
+    font-size: var(--fs-lg);
+}
+
+/* --------------------------------------------------------------------------
+   3. Bara de căutare din header
+   -------------------------------------------------------------------------- */
+.header-search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 420px;
+    background-color: var(--color-bg-muted);
+    border-radius: var(--radius-full);
+    padding-inline: var(--space-md);
+    transition: box-shadow var(--transition-fast);
+}
+
+.header-search:focus-within {
+    box-shadow: var(--shadow-focus);
+}
+
+.header-search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding-block: 0.6rem;
+    font-size: var(--fs-sm);
+}
+
+.header-search-input:focus {
+    outline: none;
+}
+
+.header-search-btn {
+    color: var(--color-text-muted);
+    font-size: var(--fs-md);
+}
+
+/* --------------------------------------------------------------------------
+   4. Navigare principală
+   -------------------------------------------------------------------------- */
+.main-nav {
+    flex-shrink: 0;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    position: relative;
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    padding-block: var(--space-sm);
+    transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-text);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   5. Acțiuni din dreapta (butoane, iconițe, meniu utilizator)
+   -------------------------------------------------------------------------- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.icon-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    color: var(--color-text-muted);
+    font-size: var(--fs-md);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.icon-link:hover {
+    background-color: var(--color-bg-muted);
+    color: var(--color-primary);
+}
+
+.icon-link .badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0;
+    font-size: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-danger);
+    color: var(--color-text-inverse);
+}
+
+/* Meniu utilizator (dropdown) */
+.user-menu {
+    position: relative;
+}
+
+.user-menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.35rem 0.75rem 0.35rem 0.35rem;
+    border-radius: var(--radius-full);
+    transition: background-color var(--transition-fast);
+}
+
+.user-menu-toggle:hover {
+    background-color: var(--color-bg-muted);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+}
+
+.caret {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-fast);
+}
+
+.user-menu-toggle[aria-expanded="true"] .caret {
+    transform: rotate(180deg);
+}
+
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + var(--space-sm));
+    min-width: 200px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-sm);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+}
+
+/* Deschis fie prin clasa .is-open (JS), fie prin :focus-within pentru accesibilitate fără JS */
+.user-menu:hover .user-dropdown,
+.user-menu:focus-within .user-dropdown,
+.user-dropdown.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-dropdown li a {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    font-size: var(--fs-sm);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    transition: background-color var(--transition-fast);
+}
+
+.user-dropdown li a:hover {
+    background-color: var(--color-bg-muted);
+    color: var(--color-primary);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: var(--color-border);
+    margin: var(--space-xs) 0;
+}
+
+/* Acțiuni pentru vizitator neautentificat */
+.guest-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* Implicit, presupunem utilizator autentificat: ascundem guest-actions.
+   Comută vizibilitatea din JS după starea reală de autentificare. */
+.guest-actions {
+    display: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Buton meniu mobil (hamburger)
+   -------------------------------------------------------------------------- */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-text);
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   7. Meniu mobil (panou dropdown pe toată lățimea)
+   -------------------------------------------------------------------------- */
+.mobile-nav {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    transition: max-height var(--transition-base);
+}
+
+.mobile-nav.is-open {
+    max-height: 600px;
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm) var(--space-lg) var(--space-lg);
+}
+
+.mobile-nav li a {
+    display: block;
+    padding: var(--space-md) 0;
+    font-size: var(--fs-base);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.mobile-nav li a:hover {
+    color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .header-search { max-width: 320px; }
+}
+
+@media (max-width: 992px) {
+    .header-search { display: none; }
+    .nav-list { gap: var(--space-md); }
+}
+
+@media (max-width: 768px) {
+    .main-nav,
+    .header-search { display: none; }
+    .btn-adauga-anunt,
+    .icon-link,
+    .user-name { display: none; }
+    .mobile-menu-toggle { display: flex; }
+    .mobile-nav { display: block; }
+    .header-container { height: 64px; }
+}
+
+@media (max-width: 576px) {
+    .header-container { gap: var(--space-sm); }
+    .logo-text { display: none; }
+}

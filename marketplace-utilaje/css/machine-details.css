@@ -1,0 +1,379 @@
+/* ==========================================================================
+   UtilajePro — machine-details.css
+   Stiluri specifice paginii detalii-utilaj.html: galerie de imagini,
+   specificații tehnice, informații vânzător, calendar disponibilitate,
+   calcul cost închiriere, butoane favorite/contact.
+   ========================================================================== */
+
+.listing-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-2xl);
+    margin-top: var(--space-lg);
+    align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   1. Galerie de imagini
+   -------------------------------------------------------------------------- */
+.gallery-main {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.gallery-main img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.gallery-badge {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+}
+
+.gallery-badge-status {
+    position: absolute;
+    top: calc(var(--space-md) + 2.2rem);
+    left: var(--space-md);
+}
+
+.gallery-favorite {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 0.6rem 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius-full);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+}
+
+.gallery-favorite:hover {
+    transform: scale(1.04);
+    color: var(--color-danger);
+}
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.gallery-thumb {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 2px solid transparent;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast), border-color var(--transition-fast);
+}
+
+.gallery-thumb img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.gallery-thumb:hover {
+    opacity: 1;
+}
+
+.gallery-thumb.is-active {
+    opacity: 1;
+    border-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   2. Titlu, preț și blocuri de conținut
+   -------------------------------------------------------------------------- */
+.listing-detail-header {
+    margin-top: var(--space-lg);
+}
+
+.listing-detail-title {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--space-xs);
+}
+
+.listing-detail-price {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.price-note {
+    font-size: var(--fs-sm);
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.detail-block {
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.detail-block h2 {
+    margin-bottom: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   3. Tabel specificații tehnice
+   -------------------------------------------------------------------------- */
+.specs-table th,
+.specs-table td {
+    padding: 0.75rem var(--space-sm);
+    font-size: var(--fs-sm);
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.specs-table th {
+    width: 45%;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.specs-table td {
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. Calendar de disponibilitate
+   -------------------------------------------------------------------------- */
+.availability-calendar {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+}
+
+.calendar-nav {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-muted);
+    transition: background-color var(--transition-fast);
+}
+
+.calendar-nav:hover {
+    background-color: var(--color-primary-light);
+}
+
+.calendar-month {
+    font-weight: 600;
+}
+
+.calendar-legend {
+    display: flex;
+    gap: var(--space-md);
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+}
+
+.legend-liber { background-color: var(--color-success); }
+.legend-rezervat { background-color: var(--color-danger); }
+.legend-selectat { background-color: var(--color-primary); }
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    text-align: center;
+}
+
+.calendar-day-name {
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+    padding-block: var(--space-xs);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    background-color: var(--color-bg-muted);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.calendar-day:hover:not(:disabled) {
+    background-color: var(--color-primary-light);
+}
+
+.calendar-day.is-empty {
+    background: none;
+    pointer-events: none;
+}
+
+.calendar-day.is-rezervat {
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+    cursor: not-allowed;
+}
+
+.calendar-day.is-selected {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+
+/* --------------------------------------------------------------------------
+   5. Formular de rezervare + calcul cost automat
+   -------------------------------------------------------------------------- */
+.rental-form {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+}
+
+.rental-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.rental-cost-summary {
+    background-color: var(--color-bg-soft);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    margin-block: var(--space-md);
+}
+
+.cost-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--fs-sm);
+    padding-block: var(--space-xs);
+    color: var(--color-text-muted);
+}
+
+.cost-row-total {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-xs);
+    padding-top: var(--space-sm);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   6. Sidebar: preț, contact vânzător, locație
+   -------------------------------------------------------------------------- */
+.sidebar-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-md));
+}
+
+.price-card .listing-detail-price {
+    margin-bottom: var(--space-xs);
+}
+
+.sidebar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.seller-info {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.seller-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+}
+
+.seller-name {
+    font-weight: 600;
+}
+
+.seller-type,
+.seller-rating {
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+}
+
+.seller-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.location-map-placeholder {
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-sm);
+}
+
+/* --------------------------------------------------------------------------
+   7. Utilaje similare
+   -------------------------------------------------------------------------- */
+.similar-listings-header {
+    margin-top: var(--space-2xl);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .listing-detail-layout { grid-template-columns: 1fr 300px; }
+}
+
+@media (max-width: 992px) {
+    .listing-detail-layout { grid-template-columns: 1fr; }
+    .sidebar-card { position: static; }
+}
+
+@media (max-width: 768px) {
+    .gallery-thumbs { grid-template-columns: repeat(4, 1fr); }
+    .rental-form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+    .gallery-thumbs { grid-template-columns: repeat(3, 1fr); }
+    .calendar-legend { flex-wrap: wrap; }
+}

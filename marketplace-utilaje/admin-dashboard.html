@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard administrator | UtilajePro</title>
+    <meta name="description" content="Panou de administrare: statistici, gestionare anunțuri și utilizatori.">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Sari la conținutul principal</a>
+
+    <!-- ===================== NAVBAR (comun pe toate paginile) ===================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" id="logo">
+                <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                <span class="logo-text">UtilajePro</span>
+            </a>
+
+            <!-- Bara de căutare rapidă (vizibilă pe desktop) -->
+            <form class="header-search" id="header-search-form" action="anunturi.html" method="get">
+                <label for="header-search-input" class="visually-hidden">Caută utilaje</label>
+                <input type="search" id="header-search-input" name="q" class="header-search-input"
+                       placeholder="Caută tractor, excavator, combină...">
+                <button type="submit" class="header-search-btn" aria-label="Caută">&#128269;</button>
+            </form>
+
+            <!-- Navigare principală -->
+            <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Acasă</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=agricole" class="nav-link">Utilaje agricole</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=constructii" class="nav-link">Utilaje construcții</a></li>
+                    <li class="nav-item"><a href="anunturi.html" class="nav-link">Toate anunțurile</a></li>
+                    <li class="nav-item"><a href="despre-noi.html" class="nav-link">Despre noi</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Acțiuni din dreapta -->
+            <div class="header-actions">
+                <a href="adauga-anunt.html" class="btn btn-primary btn-adauga-anunt">+ Adaugă anunț</a>
+
+                <a href="favorite.html" class="icon-link" id="link-favorite" title="Favorite">
+                    <span class="icon" aria-hidden="true">&#9825;</span>
+                    <span class="badge" id="favorite-count">3</span>
+                </a>
+
+                <a href="mesaje.html" class="icon-link" id="link-mesaje" title="Mesaje">
+                    <span class="icon" aria-hidden="true">&#9993;</span>
+                    <span class="badge" id="mesaje-count">2</span>
+                </a>
+
+                <!-- Meniu utilizator autentificat -->
+                <div class="user-menu" id="user-menu">
+                    <button type="button" class="user-menu-toggle" id="user-menu-toggle" aria-expanded="false">
+                        <img src="https://via.placeholder.com/32x32.png?text=IP" alt="Avatar Ion Popescu" class="user-avatar">
+                        <span class="user-name">Ion Popescu</span>
+                        <span class="caret" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <ul class="user-dropdown" id="user-dropdown">
+                        <li><a href="profil.html">Profilul meu</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <li><a href="mesaje.html">Mesaje</a></li>
+                        <li><a href="adauga-anunt.html">Anunțurile mele</a></li>
+                        <li class="dropdown-divider" role="separator"></li>
+                        <li><a href="login.html">Deconectare</a></li>
+                    </ul>
+                </div>
+
+                <!-- Acțiuni pentru vizitator neautentificat -->
+                <div class="guest-actions" id="guest-actions">
+                    <a href="login.html" class="btn btn-secondary">Autentificare</a>
+                    <a href="register.html" class="btn btn-primary">Cont nou</a>
+                </div>
+            </div>
+
+            <!-- Buton meniu mobil -->
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Deschide meniul" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <!-- Meniu mobil (dropdown) -->
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Navigare mobilă">
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                <li><a href="anunturi.html">Toate anunțurile</a></li>
+                <li><a href="adauga-anunt.html">Adaugă anunț</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
+                <li><a href="mesaje.html">Mesaje</a></li>
+                <li><a href="profil.html">Profilul meu</a></li>
+                <li><a href="despre-noi.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Autentificare</a></li>
+                <li><a href="register.html">Cont nou</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===================== SFÂRȘIT NAVBAR ===================== -->
+
+    <main id="main-content">
+        <section class="section admin-section" id="admin-section">
+            <div class="container admin-layout">
+                <!-- Sidebar admin -->
+                <aside class="admin-sidebar" id="admin-sidebar">
+                    <p class="admin-sidebar-title">Panou administrare</p>
+                    <nav aria-label="Navigare administrare">
+                        <ul>
+                            <li><a href="#admin-statistici" class="admin-nav-link is-active">Statistici</a></li>
+                            <li><a href="#admin-anunturi" class="admin-nav-link">Gestionare anunțuri</a></li>
+                            <li><a href="#admin-utilizatori" class="admin-nav-link">Gestionare utilizatori</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <div class="admin-content">
+                    <h1 class="page-title">Dashboard administrator</h1>
+
+                    <!-- Statistici -->
+                    <div class="admin-stats-grid" id="admin-statistici">
+                        <div class="stat-card">
+                            <span class="stat-value">1.284</span>
+                            <span class="stat-label">Utilizatori înregistrați</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">424</span>
+                            <span class="stat-label">Anunțuri active</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">248</span>
+                            <span class="stat-label">Utilaje agricole</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">176</span>
+                            <span class="stat-label">Utilaje pentru construcții</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">312</span>
+                            <span class="stat-label">Închirieri realizate</span>
+                        </div>
+                        <div class="stat-card stat-card--warning">
+                            <span class="stat-value">17</span>
+                            <span class="stat-label">Anunțuri în așteptare</span>
+                        </div>
+                    </div>
+
+                    <!-- Gestionare anunturi -->
+                    <div class="admin-panel" id="admin-anunturi">
+                        <div class="section-header-row">
+                            <h2 class="section-title">Gestionare anunțuri</h2>
+                            <div class="admin-table-filters">
+                                <select id="admin-anunturi-status-filter">
+                                    <option value="">Toate statusurile</option>
+                                    <option value="in-asteptare">În așteptare</option>
+                                    <option value="aprobat">Aprobat</option>
+                                    <option value="respins">Respins</option>
+                                </select>
+                            </div>
+                        </div>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Anunț</th><th>Vânzător</th><th>Categorie</th><th>Preț</th><th>Status</th><th>Acțiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="detalii-utilaj.html?id=1001">Tractor John Deere 6120M</a></td>
+                                    <td>Ion Popescu</td>
+                                    <td>Agricole</td>
+                                    <td>58.500 &euro;</td>
+                                    <td><span class="badge badge-admin-status badge-in-asteptare">În așteptare</span></td>
+                                    <td class="admin-actions">
+                                        <button type="button" class="btn btn-sm btn-success">Aprobă</button>
+                                        <button type="button" class="btn btn-sm btn-danger">Respinge</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="detalii-utilaj.html?id=1002">Excavator Caterpillar 320D</a></td>
+                                    <td>Andrei Vasilescu</td>
+                                    <td>Construcții</td>
+                                    <td>450 &euro; / zi</td>
+                                    <td><span class="badge badge-admin-status badge-aprobat">Aprobat</span></td>
+                                    <td class="admin-actions">
+                                        <button type="button" class="btn btn-sm btn-outline">Vezi</button>
+                                        <button type="button" class="btn btn-sm btn-danger">Șterge</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="detalii-utilaj.html?id=1003">Combină Claas Lexion 660</a></td>
+                                    <td>Radu Georgescu</td>
+                                    <td>Agricole</td>
+                                    <td>125.000 &euro;</td>
+                                    <td><span class="badge badge-admin-status badge-respins">Respins</span></td>
+                                    <td class="admin-actions">
+                                        <button type="button" class="btn btn-sm btn-outline">Vezi motiv</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Gestionare utilizatori -->
+                    <div class="admin-panel" id="admin-utilizatori">
+                        <div class="section-header-row">
+                            <h2 class="section-title">Gestionare utilizatori</h2>
+                            <input type="search" placeholder="Caută utilizator..." class="admin-search-input" aria-label="Caută utilizator">
+                        </div>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Utilizator</th><th>Email</th><th>Rol</th><th>Anunțuri</th><th>Status</th><th>Acțiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ion Popescu</td>
+                                    <td>ion.popescu@exemplu.ro</td>
+                                    <td>Utilizator</td>
+                                    <td>3</td>
+                                    <td><span class="badge badge-admin-status badge-aprobat">Activ</span></td>
+                                    <td class="admin-actions">
+                                        <button type="button" class="btn btn-sm btn-outline">Detalii</button>
+                                        <button type="button" class="btn btn-sm btn-danger">Blochează</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Andrei Vasilescu</td>
+                                    <td>andrei.vasilescu@exemplu.ro</td>
+                                    <td>Utilizator</td>
+                                    <td>12</td>
+                                    <td><span class="badge badge-admin-status badge-aprobat">Activ</span></td>
+                                    <td class="admin-actions">
+                                        <button type="button" class="btn btn-sm btn-outline">Detalii</button>
+                                        <button type="button" class="btn btn-sm btn-danger">Blochează</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Radu Georgescu</td>
+                                    <td>radu.georgescu@exemplu.ro</td>
+                                    <td>Utilizator</td>
+                                    <td>5</td>
+                                    <td><span class="badge badge-admin-status badge-respins">Blocat</span></td>
+                                    <td class="admin-actions">
+                                        <button type="button" class="btn btn-sm btn-outline">Detalii</button>
+                                        <button type="button" class="btn btn-sm btn-success">Deblochează</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Admin UtilajePro</td>
+                                    <td>admin@utilajepro.ro</td>
+                                    <td>Administrator</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-admin-status badge-aprobat">Activ</span></td>
+                                    <td class="admin-actions">
+                                        <button type="button" class="btn btn-sm btn-outline">Detalii</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER (comun pe toate paginile) ===================== -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                    <span class="logo-text">UtilajePro</span>
+                </div>
+                <p>Platforma dedicată vânzării și închirierii de utilaje agricole și utilaje pentru construcții din România.</p>
+                <ul class="social-links">
+                    <li><a href="#" class="social-link" title="Facebook">Facebook</a></li>
+                    <li><a href="#" class="social-link" title="Instagram">Instagram</a></li>
+                    <li><a href="#" class="social-link" title="YouTube">YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Categorii</h3>
+                <ul class="footer-links">
+                    <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                    <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                    <li><a href="anunturi.html?tip=vanzare">Utilaje de vânzare</a></li>
+                    <li><a href="anunturi.html?tip=inchiriere">Utilaje de închiriat</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Companie</h3>
+                <ul class="footer-links">
+                    <li><a href="despre-noi.html">Despre noi</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Termeni și condiții</a></li>
+                    <li><a href="#">Politica de confidențialitate</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Contact</h3>
+                <ul class="footer-contact">
+                    <li>Str. Câmpului nr. 10, Cluj-Napoca, jud. Cluj</li>
+                    <li>Tel: 0740 123 456</li>
+                    <li>Email: contact@utilajepro.ro</li>
+                    <li>Program: Luni - Vineri, 09:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 UtilajePro. Toate drepturile rezervate.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Termeni</a></li>
+                    <li><a href="#">Confidențialitate</a></li>
+                    <li><a href="#">Cookie-uri</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- ===================== SFÂRȘIT FOOTER ===================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

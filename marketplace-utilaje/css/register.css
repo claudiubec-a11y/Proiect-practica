@@ -1,0 +1,108 @@
+/* ==========================================================================
+   UtilajePro — register.css
+   Stiluri specifice paginii register.html: formular de înregistrare extins,
+   selectare rol, validări vizuale, afișare erori.
+   Reutilizează layout-ul .auth-* definit conceptual în login.css, dar
+   fișierul este independent conform structurii cerute a proiectului.
+   ========================================================================== */
+
+.auth-section {
+    padding-block: var(--space-2xl);
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: var(--space-2xl);
+}
+
+/* --------------------------------------------------------------------------
+   1. Card de înregistrare (mai lat decât cel de login, formular mai mare)
+   -------------------------------------------------------------------------- */
+.auth-card {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-2xl);
+    max-width: 560px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.auth-title {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--space-xs);
+}
+
+.auth-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   2. Rânduri de formular pe două coloane (nume/prenume, județ/oraș, parole)
+   -------------------------------------------------------------------------- */
+.auth-form .form-row-2col {
+    margin-bottom: var(--space-xs);
+}
+
+.auth-form .checkbox-label {
+    align-items: flex-start;
+    margin-block: var(--space-md);
+    line-height: 1.4;
+}
+
+.auth-form .checkbox-label input {
+    margin-top: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Validare vizuală a parolei (indicator de complexitate — pregătit
+      pentru JS: clasele weak / medium / strong pot fi adăugate dinamic)
+   -------------------------------------------------------------------------- */
+.password-strength {
+    display: flex;
+    gap: 4px;
+    margin-top: var(--space-xs);
+}
+
+.password-strength span {
+    flex: 1;
+    height: 4px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-border);
+}
+
+.password-strength.weak span:nth-child(1) { background-color: var(--color-danger); }
+.password-strength.medium span:nth-child(-n+2) { background-color: var(--color-warning); }
+.password-strength.strong span { background-color: var(--color-success); }
+
+.auth-footer-text {
+    text-align: center;
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-lg);
+}
+
+.auth-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .auth-container { grid-template-columns: 1fr; }
+    .auth-image { display: none; }
+}
+
+@media (max-width: 768px) {
+    .auth-form .form-row-2col { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+    .auth-card { padding: var(--space-lg); box-shadow: none; border: 1px solid var(--color-border); }
+}

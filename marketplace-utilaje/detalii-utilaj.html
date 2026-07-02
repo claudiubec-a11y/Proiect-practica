@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excavator Caterpillar 320D | UtilajePro</title>
+    <meta name="description" content="Detalii, specificații tehnice și disponibilitate pentru Excavator Caterpillar 320D.">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/machine-details.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Sari la conținutul principal</a>
+
+    <!-- ===================== NAVBAR (comun pe toate paginile) ===================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" id="logo">
+                <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                <span class="logo-text">UtilajePro</span>
+            </a>
+
+            <!-- Bara de căutare rapidă (vizibilă pe desktop) -->
+            <form class="header-search" id="header-search-form" action="anunturi.html" method="get">
+                <label for="header-search-input" class="visually-hidden">Caută utilaje</label>
+                <input type="search" id="header-search-input" name="q" class="header-search-input"
+                       placeholder="Caută tractor, excavator, combină...">
+                <button type="submit" class="header-search-btn" aria-label="Caută">&#128269;</button>
+            </form>
+
+            <!-- Navigare principală -->
+            <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Acasă</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=agricole" class="nav-link">Utilaje agricole</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=constructii" class="nav-link">Utilaje construcții</a></li>
+                    <li class="nav-item"><a href="anunturi.html" class="nav-link">Toate anunțurile</a></li>
+                    <li class="nav-item"><a href="despre-noi.html" class="nav-link">Despre noi</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Acțiuni din dreapta -->
+            <div class="header-actions">
+                <a href="adauga-anunt.html" class="btn btn-primary btn-adauga-anunt">+ Adaugă anunț</a>
+
+                <a href="favorite.html" class="icon-link" id="link-favorite" title="Favorite">
+                    <span class="icon" aria-hidden="true">&#9825;</span>
+                    <span class="badge" id="favorite-count">3</span>
+                </a>
+
+                <a href="mesaje.html" class="icon-link" id="link-mesaje" title="Mesaje">
+                    <span class="icon" aria-hidden="true">&#9993;</span>
+                    <span class="badge" id="mesaje-count">2</span>
+                </a>
+
+                <!-- Meniu utilizator autentificat -->
+                <div class="user-menu" id="user-menu">
+                    <button type="button" class="user-menu-toggle" id="user-menu-toggle" aria-expanded="false">
+                        <img src="https://via.placeholder.com/32x32.png?text=IP" alt="Avatar Ion Popescu" class="user-avatar">
+                        <span class="user-name">Ion Popescu</span>
+                        <span class="caret" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <ul class="user-dropdown" id="user-dropdown">
+                        <li><a href="profil.html">Profilul meu</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <li><a href="mesaje.html">Mesaje</a></li>
+                        <li><a href="adauga-anunt.html">Anunțurile mele</a></li>
+                        <li class="dropdown-divider" role="separator"></li>
+                        <li><a href="login.html">Deconectare</a></li>
+                    </ul>
+                </div>
+
+                <!-- Acțiuni pentru vizitator neautentificat -->
+                <div class="guest-actions" id="guest-actions">
+                    <a href="login.html" class="btn btn-secondary">Autentificare</a>
+                    <a href="register.html" class="btn btn-primary">Cont nou</a>
+                </div>
+            </div>
+
+            <!-- Buton meniu mobil -->
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Deschide meniul" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <!-- Meniu mobil (dropdown) -->
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Navigare mobilă">
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                <li><a href="anunturi.html">Toate anunțurile</a></li>
+                <li><a href="adauga-anunt.html">Adaugă anunț</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
+                <li><a href="mesaje.html">Mesaje</a></li>
+                <li><a href="profil.html">Profilul meu</a></li>
+                <li><a href="despre-noi.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Autentificare</a></li>
+                <li><a href="register.html">Cont nou</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===================== SFÂRȘIT NAVBAR ===================== -->
+
+    <main id="main-content">
+        <section class="section listing-detail-section" id="listing-detail">
+            <div class="container">
+                <!-- Fir de navigare -->
+                <nav class="breadcrumb" aria-label="Fir de navigare">
+                    <a href="index.html">Acasă</a> <span>/</span>
+                    <a href="anunturi.html?categorie=constructii">Utilaje construcții</a> <span>/</span>
+                    <span aria-current="page">Excavator Caterpillar 320D</span>
+                </nav>
+
+                <div class="listing-detail-layout">
+                    <!-- ============ Coloana principală ============ -->
+                    <div class="listing-detail-main">
+
+                        <!-- Galerie de imagini -->
+                        <div class="gallery" id="gallery">
+                            <div class="gallery-main">
+                                <img src="img/anunturi/2011-excavator.jpg" alt="Excavator Caterpillar 320D - imagine principală" id="gallery-main-img">
+                                <span class="badge badge-tip badge-inchiriere gallery-badge">Închiriere</span>
+                                <span class="badge badge-status badge-status-disponibil gallery-badge-status">Disponibil</span>
+                                <button type="button" class="btn-favorite gallery-favorite" id="detail-favorite-btn" aria-label="Adaugă la favorite">&#9825; Adaugă la favorite</button>
+                            </div>
+                            <div class="gallery-thumbs" id="gallery-thumbs">
+                                <button type="button" class="gallery-thumb is-active" data-img="img/anunturi/2011-excavator.jpg">
+                                    <img src="img/anunturi/2011-excavator.jpg" alt="Miniatură foto 1">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Titlu si pret (mobil) -->
+                        <div class="listing-detail-header">
+                            <h1 class="listing-detail-title">Excavator Caterpillar 320D</h1>
+                            <p class="listing-detail-price">450 &euro; / zi <span class="price-note">(disponibil și la vânzare: 68.000 &euro;)</span></p>
+                        </div>
+
+                        <!-- Descriere completă -->
+                        <div class="detail-block" id="descriere">
+                            <h2>Descriere</h2>
+                            <p>Excavator Caterpillar 320D în stare foarte bună de funcționare, verificat tehnic recent. Utilajul a fost folosit exclusiv la lucrări de terasamente și săpături pentru fundații, fără accidente sau intervenții majore. Vine echipat cu cupă standard de 90 cm și cupă de taluz. Se oferă și variantă de închiriere pe zi, săptămână sau lună, cu sau fără operator.</p>
+                        </div>
+
+                        <!-- Specificatii tehnice -->
+                        <div class="detail-block" id="specificatii">
+                            <h2>Specificații tehnice</h2>
+                            <table class="specs-table">
+                                <tbody>
+                                    <tr><th>Producător</th><td>Caterpillar</td></tr>
+                                    <tr><th>Model</th><td>320D</td></tr>
+                                    <tr><th>An fabricație</th><td>2017</td></tr>
+                                    <tr><th>Ore de funcționare</th><td>5.400 ore</td></tr>
+                                    <tr><th>Putere motor</th><td>121 CP</td></tr>
+                                    <tr><th>Greutate operațională</th><td>20.300 kg</td></tr>
+                                    <tr><th>Capacitate cupă</th><td>0,9 m&sup3;</td></tr>
+                                    <tr><th>Stare utilaj</th><td>Folosit</td></tr>
+                                    <tr><th>Combustibil</th><td>Motorină</td></tr>
+                                    <tr><th>Tracțiune</th><td>Șenile</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Disponibilitate si rezervare pentru inchiriere -->
+                        <div class="detail-block" id="rezervare">
+                            <h2>Verifică disponibilitatea și rezervă</h2>
+
+                            <!-- Calendar de disponibilitate (reprezentare vizuală simplă) -->
+                            <div class="availability-calendar" id="availability-calendar">
+                                <div class="calendar-header">
+                                    <button type="button" class="calendar-nav" id="calendar-prev" aria-label="Luna anterioară">&larr;</button>
+                                    <span class="calendar-month" id="calendar-month">Iulie 2026</span>
+                                    <button type="button" class="calendar-nav" id="calendar-next" aria-label="Luna următoare">&rarr;</button>
+                                </div>
+                                <div class="calendar-legend">
+                                    <span class="legend-item"><span class="legend-dot legend-liber"></span> Liber</span>
+                                    <span class="legend-item"><span class="legend-dot legend-rezervat"></span> Rezervat</span>
+                                    <span class="legend-item"><span class="legend-dot legend-selectat"></span> Selectat</span>
+                                </div>
+                                <div class="calendar-grid" id="calendar-grid">
+                                    <!-- Zilele calendarului sunt generate dinamic de JS; exemplu static mai jos -->
+                                    <span class="calendar-day-name">L</span><span class="calendar-day-name">Ma</span><span class="calendar-day-name">Mi</span><span class="calendar-day-name">J</span><span class="calendar-day-name">V</span><span class="calendar-day-name">S</span><span class="calendar-day-name">D</span>
+                                    <span class="calendar-day is-empty"></span><span class="calendar-day is-empty"></span>
+                                    <button type="button" class="calendar-day" data-date="2026-07-01">1</button>
+                                    <button type="button" class="calendar-day" data-date="2026-07-02">2</button>
+                                    <button type="button" class="calendar-day is-rezervat" data-date="2026-07-03" disabled>3</button>
+                                    <button type="button" class="calendar-day is-rezervat" data-date="2026-07-04" disabled>4</button>
+                                    <button type="button" class="calendar-day" data-date="2026-07-05">5</button>
+                                    <button type="button" class="calendar-day" data-date="2026-07-06">6</button>
+                                    <button type="button" class="calendar-day" data-date="2026-07-07">7</button>
+                                    <button type="button" class="calendar-day" data-date="2026-07-08">8</button>
+                                    <button type="button" class="calendar-day" data-date="2026-07-09">9</button>
+                                    <button type="button" class="calendar-day" data-date="2026-07-10">10</button>
+                                </div>
+                            </div>
+
+                            <!-- Formular rezervare + calcul cost -->
+                            <form class="rental-form" id="rental-form">
+                                <div class="rental-form-row">
+                                    <div class="form-group">
+                                        <label for="rental-start">Dată început</label>
+                                        <input type="date" id="rental-start" name="data_inceput" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rental-end">Dată sfârșit</label>
+                                        <input type="date" id="rental-end" name="data_sfarsit" required>
+                                    </div>
+                                </div>
+
+                                <!-- Rezumat cost, calculat automat de JS pe baza datelor selectate -->
+                                <div class="rental-cost-summary" id="rental-cost-summary">
+                                    <div class="cost-row">
+                                        <span>Preț pe zi</span>
+                                        <span id="cost-pret-zi">450 &euro;</span>
+                                    </div>
+                                    <div class="cost-row">
+                                        <span>Număr zile selectate</span>
+                                        <span id="cost-nr-zile">0</span>
+                                    </div>
+                                    <div class="cost-row cost-row-total">
+                                        <span>Cost total estimat</span>
+                                        <span id="cost-total">0 &euro;</span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block" id="btn-rezerva">Rezervă perioada selectată</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- ============ Sidebar dreapta ============ -->
+                    <aside class="listing-detail-sidebar">
+                        <div class="sidebar-card price-card">
+                            <p class="listing-detail-price">450 &euro; / zi</p>
+                            <p class="price-note">Preț de vânzare: 68.000 &euro;</p>
+                            <div class="sidebar-actions">
+                                <button type="button" class="btn btn-primary btn-block" id="btn-contact-vanzator">Contactează vânzătorul</button>
+                                <button type="button" class="btn btn-outline btn-block" id="btn-favorite-sidebar">&#9825; Adaugă la favorite</button>
+                            </div>
+                        </div>
+
+                        <!-- Date vanzator -->
+                        <div class="sidebar-card seller-card" id="seller-card">
+                            <h2>Vânzător</h2>
+                            <div class="seller-info">
+                                <img src="https://via.placeholder.com/64x64.png?text=AV" alt="Avatar vânzător" class="seller-avatar">
+                                <div>
+                                    <p class="seller-name">Andrei Vasilescu</p>
+                                    <p class="seller-type">Firmă &middot; UtilConstruct SRL</p>
+                                    <p class="seller-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (34 recenzii)</p>
+                                </div>
+                            </div>
+                            <ul class="seller-meta">
+                                <li>Telefon: 0722 345 678</li>
+                                <li>Membru din 2021</li>
+                                <li>Anunțuri active: 12</li>
+                            </ul>
+                            <a href="profil.html" class="link-inline">Vezi toate anunțurile vânzătorului</a>
+                        </div>
+
+                        <!-- Locatie -->
+                        <div class="sidebar-card location-card" id="location-card">
+                            <h2>Locație</h2>
+                            <p>Oradea, jud. Bihor</p>
+                            <img src="https://via.placeholder.com/320x180.png?text=Harta+Locatie" alt="Hartă locație utilaj" class="location-map-placeholder">
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Utilaje similare -->
+                <div class="section-header-row similar-listings-header">
+                    <h2 class="section-title">Utilaje similare</h2>
+                </div>
+                <div class="listings-grid" id="similar-listings-grid">
+                            <!-- Card anunț: Excavator Caterpillar 320D -->
+                            <article class="listing-card" data-categorie="constructii" data-tip-oferta="inchiriere">
+                                <div class="listing-card-media">
+                                    <img src="img/anunturi/2011-excavator.jpg" alt="Excavator Caterpillar 320D" class="listing-img">
+                                    <span class="badge badge-tip badge-inchiriere">Închiriere</span>
+                                    <span class="badge badge-status badge-status-disponibil">Disponibil</span>
+                                    <button type="button" class="btn-favorite" aria-label="Adaugă la favorite" data-anunt-id="2011">&#9825;</button>
+                                </div>
+                                <div class="listing-card-body">
+                                    <h3 class="listing-title"><a href="detalii-utilaj.html?id=2011">Excavator Caterpillar 320D</a></h3>
+                                    <p class="listing-price">450 &euro; / zi</p>
+                                    <ul class="listing-meta">
+                                        <li>An 2017</li>
+                                        <li>Oradea, Bihor</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <!-- Card anunț: Buldoexcavator JCB 3CX -->
+                            <article class="listing-card" data-categorie="constructii" data-tip-oferta="inchiriere">
+                                <div class="listing-card-media">
+                                    <img src="img/anunturi/2012-buldoexcavator.jpg" alt="Buldoexcavator JCB 3CX" class="listing-img">
+                                    <span class="badge badge-tip badge-inchiriere">Închiriere</span>
+                                    <span class="badge badge-status badge-status-inchiriat">Închiriat</span>
+                                    <button type="button" class="btn-favorite" aria-label="Adaugă la favorite" data-anunt-id="2012">&#9825;</button>
+                                </div>
+                                <div class="listing-card-body">
+                                    <h3 class="listing-title"><a href="detalii-utilaj.html?id=2012">Buldoexcavator JCB 3CX</a></h3>
+                                    <p class="listing-price">380 &euro; / zi</p>
+                                    <ul class="listing-meta">
+                                        <li>An 2020</li>
+                                        <li>Iași, Iași</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <!-- Card anunț: Buldozer Komatsu D65 -->
+                            <article class="listing-card" data-categorie="constructii" data-tip-oferta="vanzare">
+                                <div class="listing-card-media">
+                                    <img src="img/anunturi/2013-buldozer.jpg" alt="Buldozer Komatsu D65" class="listing-img">
+                                    <span class="badge badge-tip badge-vanzare">Vânzare</span>
+                                    <span class="badge badge-status badge-status-disponibil">Disponibil</span>
+                                    <button type="button" class="btn-favorite" aria-label="Adaugă la favorite" data-anunt-id="2013">&#9825;</button>
+                                </div>
+                                <div class="listing-card-body">
+                                    <h3 class="listing-title"><a href="detalii-utilaj.html?id=2013">Buldozer Komatsu D65</a></h3>
+                                    <p class="listing-price">89.000 &euro;</p>
+                                    <ul class="listing-meta">
+                                        <li>An 2014</li>
+                                        <li>Cluj-Napoca, Cluj</li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <!-- Card anunț: Încărcător frontal Volvo L120H -->
+                            <article class="listing-card" data-categorie="constructii" data-tip-oferta="vanzare">
+                                <div class="listing-card-media">
+                                    <img src="img/anunturi/2014-incarcator-frontal.jpg" alt="Încărcător frontal Volvo L120H" class="listing-img">
+                                    <span class="badge badge-tip badge-vanzare">Vânzare</span>
+                                    <span class="badge badge-status badge-status-disponibil">Disponibil</span>
+                                    <button type="button" class="btn-favorite" aria-label="Adaugă la favorite" data-anunt-id="2014">&#9825;</button>
+                                </div>
+                                <div class="listing-card-body">
+                                    <h3 class="listing-title"><a href="detalii-utilaj.html?id=2014">Încărcător frontal Volvo L120H</a></h3>
+                                    <p class="listing-price">112.000 &euro;</p>
+                                    <ul class="listing-meta">
+                                        <li>An 2019</li>
+                                        <li>Timișoara, Timiș</li>
+                                    </ul>
+                                </div>
+                            </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER (comun pe toate paginile) ===================== -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                    <span class="logo-text">UtilajePro</span>
+                </div>
+                <p>Platforma dedicată vânzării și închirierii de utilaje agricole și utilaje pentru construcții din România.</p>
+                <ul class="social-links">
+                    <li><a href="#" class="social-link" title="Facebook">Facebook</a></li>
+                    <li><a href="#" class="social-link" title="Instagram">Instagram</a></li>
+                    <li><a href="#" class="social-link" title="YouTube">YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Categorii</h3>
+                <ul class="footer-links">
+                    <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                    <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                    <li><a href="anunturi.html?tip=vanzare">Utilaje de vânzare</a></li>
+                    <li><a href="anunturi.html?tip=inchiriere">Utilaje de închiriat</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Companie</h3>
+                <ul class="footer-links">
+                    <li><a href="despre-noi.html">Despre noi</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Termeni și condiții</a></li>
+                    <li><a href="#">Politica de confidențialitate</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Contact</h3>
+                <ul class="footer-contact">
+                    <li>Str. Câmpului nr. 10, Cluj-Napoca, jud. Cluj</li>
+                    <li>Tel: 0740 123 456</li>
+                    <li>Email: contact@utilajepro.ro</li>
+                    <li>Program: Luni - Vineri, 09:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 UtilajePro. Toate drepturile rezervate.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Termeni</a></li>
+                    <li><a href="#">Confidențialitate</a></li>
+                    <li><a href="#">Cookie-uri</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- ===================== SFÂRȘIT FOOTER ===================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/machine-details.js"></script>
+
+</body>
+</html>

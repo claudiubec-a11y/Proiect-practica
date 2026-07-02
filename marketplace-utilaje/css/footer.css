@@ -1,0 +1,136 @@
+/* ==========================================================================
+   UtilajePro — footer.css
+   Footer comun: coloană despre companie, linkuri rapide, date de contact,
+   social media, bară de copyright. Prezent pe toate paginile.
+   ========================================================================== */
+
+.site-footer {
+    background-color: var(--color-text);
+    color: #CBD5E1;
+    margin-top: var(--space-2xl);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: var(--space-xl);
+    padding-block: var(--space-2xl);
+}
+
+/* --------------------------------------------------------------------------
+   1. Coloană „Despre” + social media
+   -------------------------------------------------------------------------- */
+.footer-about .logo {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-md);
+}
+
+.footer-about p {
+    color: #94A3B8;
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-lg);
+    max-width: 320px;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.9rem;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--color-text-inverse);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-link:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   2. Coloane de linkuri rapide
+   -------------------------------------------------------------------------- */
+.footer-title {
+    color: var(--color-text-inverse);
+    font-size: var(--fs-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+}
+
+.footer-links a {
+    color: #94A3B8;
+    transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-text-inverse);
+    padding-left: var(--space-xs);
+}
+
+.footer-contact li {
+    color: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   3. Bară de copyright
+   -------------------------------------------------------------------------- */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding-block: var(--space-md);
+    font-size: var(--fs-xs);
+    color: #64748B;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.footer-bottom-links a:hover {
+    color: var(--color-text-inverse);
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    .footer-bottom .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}

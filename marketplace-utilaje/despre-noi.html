@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despre noi | UtilajePro</title>
+    <meta name="description" content="Povestea, misiunea și echipa din spatele platformei UtilajePro.">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Sari la conținutul principal</a>
+
+    <!-- ===================== NAVBAR (comun pe toate paginile) ===================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" id="logo">
+                <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                <span class="logo-text">UtilajePro</span>
+            </a>
+
+            <!-- Bara de căutare rapidă (vizibilă pe desktop) -->
+            <form class="header-search" id="header-search-form" action="anunturi.html" method="get">
+                <label for="header-search-input" class="visually-hidden">Caută utilaje</label>
+                <input type="search" id="header-search-input" name="q" class="header-search-input"
+                       placeholder="Caută tractor, excavator, combină...">
+                <button type="submit" class="header-search-btn" aria-label="Caută">&#128269;</button>
+            </form>
+
+            <!-- Navigare principală -->
+            <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Acasă</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=agricole" class="nav-link">Utilaje agricole</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=constructii" class="nav-link">Utilaje construcții</a></li>
+                    <li class="nav-item"><a href="anunturi.html" class="nav-link">Toate anunțurile</a></li>
+                    <li class="nav-item"><a href="despre-noi.html" class="nav-link active">Despre noi</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Acțiuni din dreapta -->
+            <div class="header-actions">
+                <a href="adauga-anunt.html" class="btn btn-primary btn-adauga-anunt">+ Adaugă anunț</a>
+
+                <a href="favorite.html" class="icon-link" id="link-favorite" title="Favorite">
+                    <span class="icon" aria-hidden="true">&#9825;</span>
+                    <span class="badge" id="favorite-count">3</span>
+                </a>
+
+                <a href="mesaje.html" class="icon-link" id="link-mesaje" title="Mesaje">
+                    <span class="icon" aria-hidden="true">&#9993;</span>
+                    <span class="badge" id="mesaje-count">2</span>
+                </a>
+
+                <!-- Meniu utilizator autentificat -->
+                <div class="user-menu" id="user-menu">
+                    <button type="button" class="user-menu-toggle" id="user-menu-toggle" aria-expanded="false">
+                        <img src="https://via.placeholder.com/32x32.png?text=IP" alt="Avatar Ion Popescu" class="user-avatar">
+                        <span class="user-name">Ion Popescu</span>
+                        <span class="caret" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <ul class="user-dropdown" id="user-dropdown">
+                        <li><a href="profil.html">Profilul meu</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <li><a href="mesaje.html">Mesaje</a></li>
+                        <li><a href="adauga-anunt.html">Anunțurile mele</a></li>
+                        <li class="dropdown-divider" role="separator"></li>
+                        <li><a href="login.html">Deconectare</a></li>
+                    </ul>
+                </div>
+
+                <!-- Acțiuni pentru vizitator neautentificat -->
+                <div class="guest-actions" id="guest-actions">
+                    <a href="login.html" class="btn btn-secondary">Autentificare</a>
+                    <a href="register.html" class="btn btn-primary">Cont nou</a>
+                </div>
+            </div>
+
+            <!-- Buton meniu mobil -->
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Deschide meniul" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <!-- Meniu mobil (dropdown) -->
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Navigare mobilă">
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                <li><a href="anunturi.html">Toate anunțurile</a></li>
+                <li><a href="adauga-anunt.html">Adaugă anunț</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
+                <li><a href="mesaje.html">Mesaje</a></li>
+                <li><a href="profil.html">Profilul meu</a></li>
+                <li><a href="despre-noi.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Autentificare</a></li>
+                <li><a href="register.html">Cont nou</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===================== SFÂRȘIT NAVBAR ===================== -->
+
+    <main id="main-content">
+        <section class="section about-hero-section" id="about-hero">
+            <div class="container about-hero-container">
+                <div>
+                    <h1 class="page-title">Despre UtilajePro</h1>
+                    <p class="page-subtitle">Conectăm fermieri, constructori și proprietari de utilaje într-o singură platformă, simplă și de încredere.</p>
+                </div>
+                <img src="https://via.placeholder.com/480x320.png?text=Despre+UtilajePro" alt="Echipa UtilajePro">
+            </div>
+        </section>
+
+        <section class="section about-content-section">
+            <div class="container">
+                <div class="about-block">
+                    <h2>Cine suntem</h2>
+                    <p>UtilajePro este o platformă online dedicată exclusiv vânzării și închirierii de utilaje agricole și utilaje pentru construcții. Am pornit de la o nevoie simplă: fermierii și constructorii din România au nevoie de un loc unde să găsească rapid utilaje verificate, la prețuri corecte, fără intermediari inutili.</p>
+                </div>
+
+                <div class="about-block">
+                    <h2>Misiunea noastră</h2>
+                    <p>Ne dorim ca fiecare tranzacție, fie ea vânzare sau închiriere, să fie transparentă, sigură și rapidă. De aceea am construit un sistem de anunțuri verificate, mesagerie internă și rezervări clare pentru perioadele de închiriere.</p>
+                </div>
+
+                <div class="about-stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value">1.284</span>
+                        <span class="stat-label">Utilizatori activi</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">424</span>
+                        <span class="stat-label">Anunțuri publicate</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">41</span>
+                        <span class="stat-label">Județe acoperite</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">2022</span>
+                        <span class="stat-label">Anul înființării</span>
+                    </div>
+                </div>
+
+                <div class="about-block">
+                    <h2>Echipa</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="https://via.placeholder.com/140x140.png?text=CM" alt="Cristina Munteanu">
+                            <p class="team-member-name">Cristina Munteanu</p>
+                            <p class="team-member-role">Fondator &amp; CEO</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://via.placeholder.com/140x140.png?text=DP" alt="Dan Pop">
+                            <p class="team-member-name">Dan Pop</p>
+                            <p class="team-member-role">Director tehnic</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://via.placeholder.com/140x140.png?text=LR" alt="Laura Radu">
+                            <p class="team-member-name">Laura Radu</p>
+                            <p class="team-member-role">Relații clienți</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section" id="about-cta">
+            <div class="container cta-container">
+                <div>
+                    <h2>Alătură-te comunității UtilajePro</h2>
+                    <p>Creează-ți gratuit un cont și publică primul tău anunț astăzi.</p>
+                </div>
+                <a href="register.html" class="btn btn-primary btn-lg">Creează cont gratuit</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER (comun pe toate paginile) ===================== -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                    <span class="logo-text">UtilajePro</span>
+                </div>
+                <p>Platforma dedicată vânzării și închirierii de utilaje agricole și utilaje pentru construcții din România.</p>
+                <ul class="social-links">
+                    <li><a href="#" class="social-link" title="Facebook">Facebook</a></li>
+                    <li><a href="#" class="social-link" title="Instagram">Instagram</a></li>
+                    <li><a href="#" class="social-link" title="YouTube">YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Categorii</h3>
+                <ul class="footer-links">
+                    <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                    <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                    <li><a href="anunturi.html?tip=vanzare">Utilaje de vânzare</a></li>
+                    <li><a href="anunturi.html?tip=inchiriere">Utilaje de închiriat</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Companie</h3>
+                <ul class="footer-links">
+                    <li><a href="despre-noi.html">Despre noi</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Termeni și condiții</a></li>
+                    <li><a href="#">Politica de confidențialitate</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Contact</h3>
+                <ul class="footer-contact">
+                    <li>Str. Câmpului nr. 10, Cluj-Napoca, jud. Cluj</li>
+                    <li>Tel: 0740 123 456</li>
+                    <li>Email: contact@utilajepro.ro</li>
+                    <li>Program: Luni - Vineri, 09:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 UtilajePro. Toate drepturile rezervate.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Termeni</a></li>
+                    <li><a href="#">Confidențialitate</a></li>
+                    <li><a href="#">Cookie-uri</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- ===================== SFÂRȘIT FOOTER ===================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/about.js"></script>
+
+</body>
+</html>

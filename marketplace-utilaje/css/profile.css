@@ -1,0 +1,133 @@
+/* ==========================================================================
+   UtilajePro — profile.css
+   Stiluri specifice paginii profil.html: header de profil, tab-uri
+   (anunțuri, date cont, istoric închirieri), tabel istoric.
+   ========================================================================== */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-block: var(--space-lg);
+}
+
+.profile-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 3px solid var(--color-bg);
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-header-info {
+    flex: 1;
+}
+
+.profile-header-info h1 {
+    margin-bottom: 2px;
+}
+
+.profile-header-info p {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+}
+
+.profile-rating {
+    color: var(--color-warning);
+    margin-top: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   1. Tab-uri
+   -------------------------------------------------------------------------- */
+.profile-tabs {
+    display: flex;
+    gap: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-lg);
+}
+
+.profile-tab {
+    padding-block: var(--space-sm) var(--space-md);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.profile-tab:hover {
+    color: var(--color-text);
+}
+
+.profile-tab.is-active {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.profile-tab-panel[hidden] {
+    display: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. Tab: date cont — formular de setări
+   -------------------------------------------------------------------------- */
+#tab-date-cont .auth-form {
+    max-width: 480px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   3. Tab: istoric închirieri — tabel
+   -------------------------------------------------------------------------- */
+.rentals-table {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.rentals-table th,
+.rentals-table td {
+    padding: var(--space-md);
+    font-size: var(--fs-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.rentals-table th {
+    background-color: var(--color-bg-soft);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: var(--fs-xs);
+}
+
+.rentals-table tbody tr:hover {
+    background-color: var(--color-bg-soft);
+}
+
+.rentals-table a:hover {
+    color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .profile-header { flex-direction: column; text-align: center; }
+    .profile-tabs { gap: var(--space-md); overflow-x: auto; }
+    .rentals-table { display: block; overflow-x: auto; }
+}
+
+@media (max-width: 576px) {
+    .profile-avatar { width: 72px; height: 72px; }
+}

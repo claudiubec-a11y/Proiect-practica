@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acasă | UtilajePro</title>
+    <meta name="description" content="Marketplace de utilaje agricole și utilaje pentru construcții - vânzare și închiriere.">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Sari la conținutul principal</a>
+
+    <!-- ===================== NAVBAR (comun pe toate paginile) ===================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" id="logo">
+                <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                <span class="logo-text">UtilajePro</span>
+            </a>
+
+            <!-- Bara de căutare rapidă (vizibilă pe desktop) -->
+            <form class="header-search" id="header-search-form" action="anunturi.html" method="get">
+                <label for="header-search-input" class="visually-hidden">Caută utilaje</label>
+                <input type="search" id="header-search-input" name="q" class="header-search-input"
+                       placeholder="Caută tractor, excavator, combină...">
+                <button type="submit" class="header-search-btn" aria-label="Caută">&#128269;</button>
+            </form>
+
+            <!-- Navigare principală -->
+            <nav class="main-nav" id="main-nav" aria-label="Navigare principală">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Acasă</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=agricole" class="nav-link">Utilaje agricole</a></li>
+                    <li class="nav-item"><a href="anunturi.html?categorie=constructii" class="nav-link">Utilaje construcții</a></li>
+                    <li class="nav-item"><a href="anunturi.html" class="nav-link">Toate anunțurile</a></li>
+                    <li class="nav-item"><a href="despre-noi.html" class="nav-link">Despre noi</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Acțiuni din dreapta -->
+            <div class="header-actions">
+                <a href="adauga-anunt.html" class="btn btn-primary btn-adauga-anunt">+ Adaugă anunț</a>
+
+                <a href="favorite.html" class="icon-link" id="link-favorite" title="Favorite">
+                    <span class="icon" aria-hidden="true">&#9825;</span>
+                    <span class="badge" id="favorite-count">3</span>
+                </a>
+
+                <a href="mesaje.html" class="icon-link" id="link-mesaje" title="Mesaje">
+                    <span class="icon" aria-hidden="true">&#9993;</span>
+                    <span class="badge" id="mesaje-count">2</span>
+                </a>
+
+                <!-- Meniu utilizator autentificat -->
+                <div class="user-menu" id="user-menu">
+                    <button type="button" class="user-menu-toggle" id="user-menu-toggle" aria-expanded="false">
+                        <img src="https://via.placeholder.com/32x32.png?text=IP" alt="Avatar Ion Popescu" class="user-avatar">
+                        <span class="user-name">Ion Popescu</span>
+                        <span class="caret" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <ul class="user-dropdown" id="user-dropdown">
+                        <li><a href="profil.html">Profilul meu</a></li>
+                        <li><a href="favorite.html">Favorite</a></li>
+                        <li><a href="mesaje.html">Mesaje</a></li>
+                        <li><a href="adauga-anunt.html">Anunțurile mele</a></li>
+                        <li class="dropdown-divider" role="separator"></li>
+                        <li><a href="login.html">Deconectare</a></li>
+                    </ul>
+                </div>
+
+                <!-- Acțiuni pentru vizitator neautentificat -->
+                <div class="guest-actions" id="guest-actions">
+                    <a href="login.html" class="btn btn-secondary">Autentificare</a>
+                    <a href="register.html" class="btn btn-primary">Cont nou</a>
+                </div>
+            </div>
+
+            <!-- Buton meniu mobil -->
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Deschide meniul" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <!-- Meniu mobil (dropdown) -->
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Navigare mobilă">
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                <li><a href="anunturi.html">Toate anunțurile</a></li>
+                <li><a href="adauga-anunt.html">Adaugă anunț</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
+                <li><a href="mesaje.html">Mesaje</a></li>
+                <li><a href="profil.html">Profilul meu</a></li>
+                <li><a href="despre-noi.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Autentificare</a></li>
+                <li><a href="register.html">Cont nou</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===================== SFÂRȘIT NAVBAR ===================== -->
+
+    <main id="main-content">
+        <!-- Secțiune Hero cu căutare principală -->
+        <section class="hero" id="hero">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1 class="hero-title">Utilaje agricole și de construcții,<br>de vânzare sau de închiriat</h1>
+                    <p class="hero-subtitle">Mii de anunțuri verificate din toată țara. Găsește tractorul, excavatorul sau utilajul de care ai nevoie, chiar acum.</p>
+
+                    <!-- Formular de căutare rapidă -->
+                    <form class="hero-search-form" id="hero-search-form" action="anunturi.html" method="get">
+                        <div class="hero-search-row">
+                            <select name="categorie" id="hero-categorie" class="hero-select">
+                                <option value="">Toate categoriile</option>
+                                <option value="agricole">Utilaje agricole</option>
+                                <option value="constructii">Utilaje construcții</option>
+                            </select>
+                            <input type="text" name="q" id="hero-q" class="hero-input" placeholder="Ex: Tractor John Deere, Excavator...">
+                            <button type="submit" class="btn btn-primary btn-hero-search">Caută utilaje</button>
+                        </div>
+                        <div class="hero-search-tags">
+                            <span class="tag-label">Căutări populare:</span>
+                            <a href="anunturi.html?q=tractor" class="tag-link">Tractor</a>
+                            <a href="anunturi.html?q=excavator" class="tag-link">Excavator</a>
+                            <a href="anunturi.html?q=combina" class="tag-link">Combină</a>
+                            <a href="anunturi.html?tip=inchiriere" class="tag-link">Utilaje de închiriat</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/560x400.png?text=Utilaje+Agricole+%26+Constructii" alt="Utilaje agricole și de construcții">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorii principale -->
+        <section class="section categories-section" id="categorii">
+            <div class="container">
+                <h2 class="section-title">Explorează pe categorii</h2>
+                <div class="categories-grid">
+                    <a href="anunturi.html?categorie=agricole" class="category-card">
+                        <img src="https://via.placeholder.com/300x180.png?text=Utilaje+Agricole" alt="Utilaje agricole" class="category-img">
+                        <h3 class="category-name">Utilaje agricole</h3>
+                        <p class="category-count">248 anunțuri</p>
+                    </a>
+                    <a href="anunturi.html?categorie=constructii" class="category-card">
+                        <img src="https://via.placeholder.com/300x180.png?text=Utilaje+Constructii" alt="Utilaje pentru construcții" class="category-img">
+                        <h3 class="category-name">Utilaje pentru construcții</h3>
+                        <p class="category-count">176 anunțuri</p>
+                    </a>
+                    <a href="anunturi.html?tip=inchiriere" class="category-card">
+                        <img src="https://via.placeholder.com/300x180.png?text=Inchirieri" alt="Utilaje de închiriat" class="category-img">
+                        <h3 class="category-name">Utilaje de închiriat</h3>
+                        <p class="category-count">92 anunțuri</p>
+                    </a>
+                    <a href="anunturi.html?tip=vanzare" class="category-card">
+                        <img src="https://via.placeholder.com/300x180.png?text=Vanzari" alt="Utilaje de vânzare" class="category-img">
+                        <h3 class="category-name">Utilaje de vânzare</h3>
+                        <p class="category-count">332 anunțuri</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtre rapide (formular reutilizabil, identic ca structură cu pagina anunturi.html) -->
+        <section class="section filters-preview-section" id="filtre-rapide">
+            <div class="container">
+                <h2 class="section-title">Caută după criterii</h2>
+                <form class="filters-form filters-form--compact" id="quick-filters-form" action="anunturi.html" method="get">
+                    <div class="filters-grid">
+                        <div class="filter-group">
+                            <label for="f-categorie">Categorie</label>
+                            <select id="f-categorie" name="categorie">
+                                <option value="">Toate</option>
+                                <option value="agricole">Agricole</option>
+                                <option value="constructii">Construcții</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="f-tip-utilaj">Tip utilaj</label>
+                            <select id="f-tip-utilaj" name="tip_utilaj">
+                                <option value="">Toate tipurile</option>
+                                <option value="tractor">Tractor</option>
+                                <option value="excavator">Excavator</option>
+                                <option value="combina">Combină</option>
+                                <option value="buldoexcavator">Buldoexcavator</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="f-judet">Județ</label>
+                            <select id="f-judet" name="judet">
+                                <option value="">Toate județele</option>
+                                <option value="cluj">Cluj</option>
+                                <option value="bihor">Bihor</option>
+                                <option value="timis">Timiș</option>
+                                <option value="iasi">Iași</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="f-tip-oferta">Tip ofertă</label>
+                            <select id="f-tip-oferta" name="tip_oferta">
+                                <option value="">Vânzare și închiriere</option>
+                                <option value="vanzare">Doar vânzare</option>
+                                <option value="inchiriere">Doar închiriere</option>
+                            </select>
+                        </div>
+                        <div class="filter-group filter-group--submit">
+                            <button type="submit" class="btn btn-primary btn-block">Filtrează anunțurile</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Anunțuri recomandate -->
+        <section class="section featured-listings-section" id="anunturi-recomandate">
+            <div class="container">
+                <div class="section-header-row">
+                    <h2 class="section-title">Anunțuri recomandate</h2>
+                    <a href="anunturi.html" class="link-see-all">Vezi toate anunțurile &rarr;</a>
+                </div>
+
+                <div class="listings-grid" id="featured-listings-grid">
+                    <!-- Card anunț #1 -->
+                    <article class="listing-card">
+                        <div class="listing-card-media">
+                            <img src="img/anunturi/2001-tractor.jpg" alt="Tractor New Holland T7.190" class="listing-img">
+                            <span class="badge badge-tip badge-vanzare">Vânzare</span>
+                            <span class="badge badge-status badge-status-disponibil">Disponibil</span>
+                            <button type="button" class="btn-favorite" aria-label="Adaugă la favorite" data-anunt-id="2001">&#9825;</button>
+                        </div>
+                        <div class="listing-card-body">
+                            <h3 class="listing-title"><a href="detalii-utilaj.html?id=2001">Tractor New Holland T7.190</a></h3>
+                            <p class="listing-price">62.000 &euro;</p>
+                            <ul class="listing-meta">
+                                <li>An 2020</li>
+                                <li>2.100 ore</li>
+                                <li>Cluj-Napoca, Cluj</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card anunț #2 -->
+                    <article class="listing-card">
+                        <div class="listing-card-media">
+                            <img src="img/anunturi/2003-presa-balotat.jpg" alt="Presă de balotat Krone Comprima F155" class="listing-img">
+                            <span class="badge badge-tip badge-inchiriere">Închiriere</span>
+                            <span class="badge badge-status badge-status-disponibil">Disponibil</span>
+                            <button type="button" class="btn-favorite is-active" aria-label="Elimină de la favorite" data-anunt-id="2003">&#9829;</button>
+                        </div>
+                        <div class="listing-card-body">
+                            <h3 class="listing-title"><a href="detalii-utilaj.html?id=2003">Presă de balotat Krone Comprima F155</a></h3>
+                            <p class="listing-price">180 &euro; / zi</p>
+                            <ul class="listing-meta">
+                                <li>An 2018</li>
+                                <li>1.800 ore</li>
+                                <li>Dej, Cluj</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card anunț #3 -->
+                    <article class="listing-card">
+                        <div class="listing-card-media">
+                            <img src="img/anunturi/2004-semanatoare.jpg" alt="Semănătoare Kverneland Optima" class="listing-img">
+                            <span class="badge badge-tip badge-vanzare">Vânzare</span>
+                            <span class="badge badge-status badge-status-disponibil">Disponibil</span>
+                            <button type="button" class="btn-favorite" aria-label="Adaugă la favorite" data-anunt-id="2004">&#9825;</button>
+                        </div>
+                        <div class="listing-card-body">
+                            <h3 class="listing-title"><a href="detalii-utilaj.html?id=2004">Semănătoare Kverneland Optima</a></h3>
+                            <p class="listing-price">18.500 &euro;</p>
+                            <ul class="listing-meta">
+                                <li>An 2019</li>
+                                <li>900 ore</li>
+                                <li>Oradea, Bihor</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card anunț #4 -->
+                    <article class="listing-card">
+                        <div class="listing-card-media">
+                            <img src="img/anunturi/2005-plug.jpg" alt="Plug Lemken Juwel 8" class="listing-img">
+                            <span class="badge badge-tip badge-vanzare">Vânzare</span>
+                            <span class="badge badge-status badge-status-disponibil">Disponibil</span>
+                            <button type="button" class="btn-favorite" aria-label="Adaugă la favorite" data-anunt-id="2005">&#9825;</button>
+                        </div>
+                        <div class="listing-card-body">
+                            <h3 class="listing-title"><a href="detalii-utilaj.html?id=2005">Plug Lemken Juwel 8</a></h3>
+                            <p class="listing-price">9.800 &euro;</p>
+                            <ul class="listing-meta">
+                                <li>An 2021</li>
+                                <li>300 ore</li>
+                                <li>Timișoara, Timiș</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- De ce UtilajePro -->
+        <section class="section why-us-section" id="de-ce-noi">
+            <div class="container">
+                <h2 class="section-title">De ce să alegi UtilajePro</h2>
+                <div class="why-us-grid">
+                    <div class="why-us-item">
+                        <span class="why-us-icon" aria-hidden="true">&#9989;</span>
+                        <h3>Anunțuri verificate</h3>
+                        <p>Fiecare anunț este verificat de echipa noastră înainte de publicare.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <span class="why-us-icon" aria-hidden="true">&#128172;</span>
+                        <h3>Mesagerie directă</h3>
+                        <p>Discută direct cu vânzătorul prin sistemul de mesagerie internă.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <span class="why-us-icon" aria-hidden="true">&#128197;</span>
+                        <h3>Rezervare simplă</h3>
+                        <p>Alege perioada de închiriere direct din calendarul de disponibilitate.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <span class="why-us-icon" aria-hidden="true">&#128274;</span>
+                        <h3>Tranzacții sigure</h3>
+                        <p>Date despre vânzător, locație și istoricul utilajului, într-un singur loc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action publicare anunt -->
+        <section class="section cta-section" id="cta-vinde">
+            <div class="container cta-container">
+                <div>
+                    <h2>Vinzi sau închiriezi un utilaj?</h2>
+                    <p>Publică un anunț gratuit în mai puțin de 5 minute și ajungi la mii de cumpărători.</p>
+                </div>
+                <a href="adauga-anunt.html" class="btn btn-primary btn-lg">Adaugă anunț gratuit</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER (comun pe toate paginile) ===================== -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">&#128666;</span>
+                    <span class="logo-text">UtilajePro</span>
+                </div>
+                <p>Platforma dedicată vânzării și închirierii de utilaje agricole și utilaje pentru construcții din România.</p>
+                <ul class="social-links">
+                    <li><a href="#" class="social-link" title="Facebook">Facebook</a></li>
+                    <li><a href="#" class="social-link" title="Instagram">Instagram</a></li>
+                    <li><a href="#" class="social-link" title="YouTube">YouTube</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Categorii</h3>
+                <ul class="footer-links">
+                    <li><a href="anunturi.html?categorie=agricole">Utilaje agricole</a></li>
+                    <li><a href="anunturi.html?categorie=constructii">Utilaje construcții</a></li>
+                    <li><a href="anunturi.html?tip=vanzare">Utilaje de vânzare</a></li>
+                    <li><a href="anunturi.html?tip=inchiriere">Utilaje de închiriat</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Companie</h3>
+                <ul class="footer-links">
+                    <li><a href="despre-noi.html">Despre noi</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Termeni și condiții</a></li>
+                    <li><a href="#">Politica de confidențialitate</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Contact</h3>
+                <ul class="footer-contact">
+                    <li>Str. Câmpului nr. 10, Cluj-Napoca, jud. Cluj</li>
+                    <li>Tel: 0740 123 456</li>
+                    <li>Email: contact@utilajepro.ro</li>
+                    <li>Program: Luni - Vineri, 09:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 UtilajePro. Toate drepturile rezervate.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Termeni</a></li>
+                    <li><a href="#">Confidențialitate</a></li>
+                    <li><a href="#">Cookie-uri</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- ===================== SFÂRȘIT FOOTER ===================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* ==========================================================================
+   UtilajePro — login.css
+   Stiluri specifice paginii login.html: formular centrat, validări
+   vizuale, butoane sociale, design premium.
+   ========================================================================== */
+
+.auth-section {
+    padding-block: var(--space-2xl);
+    min-height: calc(100vh - var(--header-height) - 320px);
+    display: flex;
+    align-items: center;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-2xl);
+}
+
+/* --------------------------------------------------------------------------
+   1. Card de autentificare
+   -------------------------------------------------------------------------- */
+.auth-card {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-2xl);
+    max-width: 440px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.auth-title {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--space-xs);
+}
+
+.auth-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-xl);
+}
+
+.auth-form .form-group input {
+    padding: 0.9rem 1rem;
+}
+
+.form-row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+    font-size: var(--fs-sm);
+}
+
+/* --------------------------------------------------------------------------
+   2. Separator „sau” + butoane sociale
+   -------------------------------------------------------------------------- */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+    margin-block: var(--space-lg);
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.auth-divider span {
+    padding-inline: var(--space-md);
+}
+
+.auth-social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+/* --------------------------------------------------------------------------
+   3. Selector de rol pentru demo (utilizator / administrator)
+   -------------------------------------------------------------------------- */
+.auth-role-switch {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-muted);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-lg);
+}
+
+.auth-role-switch label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    cursor: pointer;
+}
+
+.auth-footer-text {
+    text-align: center;
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   4. Ilustrație laterală
+   -------------------------------------------------------------------------- */
+.auth-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   5. Responsive — 1200 / 992 / 768 / 576
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .auth-container { grid-template-columns: 1fr; }
+    .auth-image { display: none; }
+}
+
+@media (max-width: 576px) {
+    .auth-card { padding: var(--space-lg); box-shadow: none; border: 1px solid var(--color-border); }
+    .form-row-between { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+}
